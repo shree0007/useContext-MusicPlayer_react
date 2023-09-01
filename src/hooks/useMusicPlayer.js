@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MusicContext } from '../contexts/MusicContext';
 
 const useMusicPlayer = () => {
@@ -6,10 +6,12 @@ const useMusicPlayer = () => {
 
     const togglePlay = () => {
         if (state.isPlaying) {
+            state.audioPlayer.pause();
             setState({ ...state, isPlaying: false })
+
         } else {
             setState({ ...state, isPlaying: true })
-            state.audioplayer.play()
+            state.audioPlayer.play()
         }
     }
 
@@ -17,9 +19,9 @@ const useMusicPlayer = () => {
         if (index === state.currentTrackIndex) {
             togglePlay();
         } else {
-            state.audioplayer.pause();
-            state.audioplayer = new Audio(state.tracks[index].file);
-            state.audioplayer.play();
+            state.audioPlayer.pause();
+            state.audioPlayer = new Audio(state.tracks[index].file);
+            state.audioPlayer.play();
             setState({ ...state, currentTrackIndex: index, isPlaying: true })
 
         }

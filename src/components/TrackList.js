@@ -15,7 +15,7 @@ const TrackList = () => {
 
                 <div key={`${track}_${index}`}>
 
-                    <button onClick={() => music.playTrack(index)}>
+                    <button style={{ marginTop: '1rem' }} onClick={() => music.playTrack(index)}>
 
                         {music.isPlaying && music.currentTrackIndex === index ? (<FontAwesomeIcon icon={faPause} />) : (<FontAwesomeIcon icon={faPlay} />)}
 

@@ -6,23 +6,23 @@ const PlayerControls = () => {
     const music = useMusicPlayer();
 
     return (
-        <div>
+        <div style={{ marginBottom: '2rem' }}>
             <div>
                 <p>{music.currentTrackName}</p>
             </div>
-            <button>
+            <button style={{ padding: '0.5rem', margin: '0.1rem', backgroundColor: 'orangered', color: 'white', border: 'none', borderRadius: '5px' }}>
                 <FontAwesomeIcon
                     icon={faStepBackward}
                     onClick={music.playPreviousTrack}
                 />
             </button>
-            <button onClick={music.togglePlay}>
+            <button style={{ padding: '0.5rem', margin: '0.1rem', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px' }} onClick={music.togglePlay}>
                 {music.isPlaying ? (
                     <FontAwesomeIcon icon={faPause} />)
                     : (
                         <FontAwesomeIcon icon={faPlay} />)}
             </button>
-            <button>
+            <button style={{ padding: '0.5rem', margin: '0.1rem', backgroundColor: 'orangered', color: 'white', border: 'none', borderRadius: '5px' }}>
                 <FontAwesomeIcon icon={faStepForward}
                     onClick={music.playNextTrack} />
             </button>
@@ -33,4 +33,4 @@ const PlayerControls = () => {
 
 }
 
-export default PlayerControls;
+export { PlayerControls };
