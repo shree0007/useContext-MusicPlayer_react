@@ -4,6 +4,9 @@ import { PlayerControls } from './components/PlayerControls';
 import TrackList from './components/TrackList';
 import { MusicContext } from './contexts/MusicContext';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeadphones } from '@fortawesome/free-solid-svg-icons';
+
 import music1 from './assets/music1.mp3';
 import music2 from './assets/music2.mp3';
 import music3 from './assets/music3.mp3';
@@ -16,15 +19,15 @@ function App() {
     audioPlayer: new Audio(music1),
     tracks: [
       {
-        name: "Music 1",
+        name: "The paranormal is real",
         file: music1,
       },
       {
-        name: "Music 2",
+        name: "Lofi chill",
         file: music2,
       },
       {
-        name: "Music 3",
+        name: "Summer walk",
         file: music3,
       },
     ],
@@ -41,7 +44,8 @@ function App() {
   return (
     <MusicContext.Provider value={[state, setState]}>
       <div className="App">
-        <h1>Music Player</h1>
+        <h1 style={{ background: 'hsla(37, 100%, 53%, 1)', color: 'blue', padding: '1rem', marginBottom: '5rem' }}>Music Player <FontAwesomeIcon style={{ marginLeft: '1rem' }} icon={faHeadphones} beatFade /></h1>
+
         <PlayerControls />
         <TrackList />
       </div>

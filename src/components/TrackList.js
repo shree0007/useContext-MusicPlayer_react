@@ -9,23 +9,23 @@ const TrackList = () => {
 
     return (
 
-        <div>
+        <div style={{ background: 'hsla(37, 100%, 53%, 1)' }}>
 
             {music.trackList.map((track, index) => (
 
-                <div key={`${track}_${index}`}>
+                <div style={{ display: 'flex' }} key={`${track}_${index}`}>
 
-                    <button style={{ marginTop: '1rem' }} onClick={() => music.playTrack(index)}>
+                    <button style={{ margin: '0.8rem', padding: '0.5rem', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px' }} onClick={() => music.playTrack(index)}>
 
                         {music.isPlaying && music.currentTrackIndex === index ? (<FontAwesomeIcon icon={faPause} />) : (<FontAwesomeIcon icon={faPlay} />)}
 
                     </button>
 
-                    <div>
 
-                        Track Playing :{track.name}
 
-                    </div>
+                    <p style={{ marginLeft: '1rem' }}>{track.name}</p>
+
+
 
                 </div>
 
